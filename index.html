@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<script type='text/javascript' src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.amd.min.js"></script> -->
+ 	<script src="https://twitter.github.io/typeahead.js/js/handlebars.js"></script>
+
+
+	<script id="hbLayout1" type="text/x-handlebars-template">
+		<div>
+			<h1>{{valorH1}}</h1>
+			<p>{{valorP}}</p>
+		</div>
+	</script>
+
+</head>
+<body>
+	<div id="here-the-content"></div>
+</body>
+	<script>
+		var fonte = $("#hbLayout1").html();
+		var template = Handlebars.compile(fonte);
+
+
+		var exibicao = {
+			valorH1: "valor h1",
+			valorP: "valor p"
+		}
+
+		console.log(template(exibicao));
+
+		$("#here-the-content").html(template(exibicao));
+
+
+
+	</script>
+</html>
